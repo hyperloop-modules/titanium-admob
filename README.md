@@ -36,8 +36,8 @@ var ad = appAd.create({
     onAdLoaded : function() {
         alert('ad loaded!');
     },
-    onAdClosed: function(){
-        setTimeout(function(){
+    onAdClosed: function() {
+        setTimeout(function() {
             appAd.loadAd();
         },2500);
     }
