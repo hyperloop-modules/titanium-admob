@@ -47,7 +47,7 @@ var ad = appAd.create({
 
 In this example we're loading a new ad after 2,5 seconds after the ad has closed, but you're free to pre-load whenever your want. Keep in mind it might take some time before the ad is loaded.
 
-Look at the [native docs](https://developers.google.com/admob/ios/interstitial) to see any other specifications and notes.
+Look at the [native docs](https://developers.google.com/admob/android/interstitial) to see any other specifications and notes.
 
 ## License
 MIT
