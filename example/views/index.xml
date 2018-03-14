@@ -1,0 +1,5 @@
+<Alloy>
+	<Window class="container" onOpen="handleOpen">
+		<Label id="label" onClick="doShowAd">Click to display ad</Label>
+	</Window>
+</Alloy>
