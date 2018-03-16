@@ -4,9 +4,10 @@ Right now this module is Android only, and only supports Interstitial Ads
 ## Run the Sample
 
 1. Copy the `ti-admob` folder to your `lib/` (Alloy) or your Resources (Classic) directory.
-2. Copy the example code to your Titanium app (in case of a Classic app adjust the code to fit your needs)
-3. Include `hyperloop` and `ti.playservices` modules in your tiapp.xml
-4. Adjust `tiapp.xml` to support the ad type as explained below
+2. Copy the example code to your Titanium app (in case of a Classic app adjust the code to fit your needs).
+3. Include `hyperloop` and `ti.playservices` modules in your tiapp.xml.
+4. Adjust `tiapp.xml` to support the ad type as explained below.
+5. Make sure you have `<transpile>true</transpile>` added in tiapp to support ES6.
 5. Go for it!
 
 ## tiapp.xml adjustments required

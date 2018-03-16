@@ -35,11 +35,11 @@ class AdView {
     }
     
     createAd() {
-        if (this.options.adType == ADTYPES.AD_TYPE_INTERSTITIAL && Ti.Android) {
+        if (this.options.adType === ADTYPES.AD_TYPE_INTERSTITIAL && Ti.Android) {
             this.createInterstitialAdAndroid();
         }
         
-        if (this.adView){
+        if (this.adView !== null) {
             // first time, load already
             this.load();
         }
@@ -52,10 +52,10 @@ class AdView {
     createInterstitialAdAndroid() {
         this.adView = new InterstitialAd(this.activity);
         this.adView.setAdUnitId(this.options.adId); // replace ad ID with your own
-        this.adView.setAdListener(this.getAdListener());        
+        this.adView.setAdListener(this.AdListener);        
     }
     
-    getAdListener() {
+    get AdListener() {
         let self = this;
         let ADL = com.google.android.gms.ads.AdListener.extend({
             onAdLoaded: () => {
@@ -94,11 +94,9 @@ class AdView {
         return this.adView;
     }
     
-    
     set appId(appId){
         mobads.initialize(this.activity, appId);
     }
-    
 }
 
 export {

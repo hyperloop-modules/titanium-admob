@@ -2,8 +2,9 @@ let ad;
 import {ADTYPES, AdView} from 'ti-admob';
 
 function doShowAd() {
-	if (!ad)
+	if (!ad) {
 		return;
+	}
 	if (ad.isLoaded()) {
 		ad.show();
 	} else {
@@ -15,7 +16,7 @@ $.index.open();
 
 function handleOpen() {
     
-	let appAd = new AdView({
+	const appAd = new AdView({
 		adType: ADTYPES.AD_TYPE_INTERSTITIAL,
 		onAdLoaded : () => {
 			alert('ad loaded!');
