@@ -1,5 +1,5 @@
 let ad;
-import {ADTYPES, AdView} from 'ti-admob';
+import { ADTYPES, AdView } from 'ti-admob';
 
 function doShowAd() {
 	if (!ad) {

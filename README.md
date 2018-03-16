@@ -8,7 +8,7 @@ Right now this module is Android only, and only supports Interstitial Ads
 3. Include `hyperloop` and `ti.playservices` modules in your tiapp.xml.
 4. Adjust `tiapp.xml` to support the ad type as explained below.
 5. Make sure you have `<transpile>true</transpile>` added in tiapp to support ES6.
-5. Go for it!
+6. Go for it!
 
 ## tiapp.xml adjustments required
 You need to add a manifest to your app with an extra activity to support Interstitial ads. It should look like this:
@@ -33,7 +33,7 @@ Right here we're creating a new ad using the Google Default app/add id's. As soo
 Check the sample how it's implemented.
 
 ```javascript
-import {ADTYPES, AdView} from 'ti-admob';
+import { ADTYPES, AdView } from 'ti-admob';
 
 const appAd = new AdView({
     adType: ADTYPES.AD_TYPE_INTERSTITIAL,
