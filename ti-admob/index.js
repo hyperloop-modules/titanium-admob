@@ -64,7 +64,7 @@ class AdView {
             },
             onAdFailedToLoad: (e) => {
                 // failed to load ad
-                if (self.options.onAdFailedToLoad) self.options.onAdFailedToLoad();
+                if (self.options.onAdFailedToLoad) self.options.onAdFailedToLoad(e);
             },
             onAdOpened: () => {
                 // user opened ad. At this point app can pause work
