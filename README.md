@@ -35,7 +35,7 @@ Check the sample how it's implemented.
 ```javascript
 import {ADTYPES, AdView} from 'ti-admob';
 
-let appAd = new AdView({
+const appAd = new AdView({
     adType: ADTYPES.AD_TYPE_INTERSTITIAL,
     appId: 'ca-app-pub-3940256099942544~3347511713',
     adId: 'ca-app-pub-3940256099942544/1033173712',
@@ -49,7 +49,7 @@ let appAd = new AdView({
     }
 });
 
-let ad = appAd.ad;
+const ad = appAd.ad;
 
 ```
 
