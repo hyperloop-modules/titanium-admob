@@ -18,7 +18,7 @@ class AdView {
         if (!hasInitApp && !this.options.appId) {
             // setting default/test appId by google
             this.options.appId = 'ca-app-pub-3940256099942544~3347511713'; 
-            Ti.API.warn('Default/Test AppId is used that is provided by google');
+            Ti.API.warn('Default/Test AppId is used that is provided by Google');
         }
 
         if (!hasInitApp) {
@@ -28,7 +28,7 @@ class AdView {
         
         if (!this.options.adId) {
             this.options.adId = 'ca-app-pub-3940256099942544/1033173712'; 
-            Ti.API.warn('Default/Test AdId is used that is provided by google');
+            Ti.API.warn('Default/Test AdId is used that is provided by Google');
         }
         
         this.createAd();
