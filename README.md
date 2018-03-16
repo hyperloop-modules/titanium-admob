@@ -3,7 +3,7 @@ Right now this module is Android only, and only supports Interstitial Ads
 
 ## Run the Sample
 
-1. Copy the `ti.admob` folder to your `lib/` (Alloy) or your Resources (Classic) directory
+1. Copy the `ti-admob` folder to your `lib/` (Alloy) or your Resources (Classic) directory.
 2. Copy the example code to your Titanium app (in case of a Classic app adjust the code to fit your needs)
 3. Include `hyperloop` and `ti.playservices` modules in your tiapp.xml
 4. Adjust `tiapp.xml` to support the ad type as explained below
@@ -28,20 +28,28 @@ You need to add a manifest to your app with an extra activity to support Interst
 ```
 
 ## Example
+Right here we're creating a new ad using the Google Default app/add id's. As soon as the onAdLoaded event is fired you can show the ad using `ad.show();`
+Check the sample how it's implemented.
+
 ```javascript
-var appAd = new (require('ti.admob/ad'));
-var ad = appAd.create({
-    adType: tiAdmob.ADTYPES.AD_TYPE_INTERSTITIAL,
-    preload: true,
-    onAdLoaded : function() {
+import {ADTYPES, AdView} from 'ti-admob';
+
+let appAd = new AdView({
+    adType: ADTYPES.AD_TYPE_INTERSTITIAL,
+    appId: 'ca-app-pub-3940256099942544~3347511713',
+    adId: 'ca-app-pub-3940256099942544/1033173712',
+    onAdLoaded : () => {
         alert('ad loaded!');
     },
-    onAdClosed: function() {
-        setTimeout(function() {
-            appAd.loadAd();
+    onAdClosed: () => {
+        setTimeout(() => {
+            appAd.load();
         },2500);
     }
 });
+
+let ad = appAd.ad;
+
 ```
 
 
