@@ -15,7 +15,6 @@ function doShowAd() {
 $.index.open();
 
 function handleOpen() {
-    
 	const appAd = new AdView({
 		adType: ADTYPES.AD_TYPE_INTERSTITIAL,
 		onAdLoaded : () => {

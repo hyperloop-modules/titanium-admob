@@ -52,10 +52,10 @@ class AdView {
     createInterstitialAdAndroid() {
         this.adView = new InterstitialAd(this.activity);
         this.adView.setAdUnitId(this.options.adId); // replace ad ID with your own
-        this.adView.setAdListener(this.AdListener);        
+        this.adView.setAdListener(this.adListener);        
     }
     
-    get AdListener() {
+    get adListener() {
         let self = this;
         let ADL = com.google.android.gms.ads.AdListener.extend({
             onAdLoaded: () => {
@@ -94,7 +94,7 @@ class AdView {
         return this.adView;
     }
     
-    set appId(appId){
+    set appId(appId) {
         mobads.initialize(this.activity, appId);
     }
 }
