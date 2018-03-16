@@ -1,11 +1,12 @@
 # Ti.Admob
-Right now this module is Android only, and only supports Interstitial Ads
+
+Use the native Admob SDK with Axway Hyperloop. Right now this module is Android only, and only supports Interstitial Ads.
 
 ## Run the Sample
 
-1. Copy the `ti-admob` folder to your `lib/` (Alloy) or your Resources (Classic) directory.
+1. Copy the `titanium-admob` folder to your `lib/` (Alloy) or your `Resources/` (Classic) directory.
 2. Copy the example code to your Titanium app (in case of a Classic app adjust the code to fit your needs).
-3. Include `hyperloop` and `ti.playservices` modules in your tiapp.xml.
+3. Include the `hyperloop` and `ti.playservices` modules in your tiapp.xml.
 4. Adjust `tiapp.xml` to support the ad type as explained below.
 5. Make sure you have `<transpile>true</transpile>` added in tiapp to support ES6.
 6. Go for it!
@@ -29,11 +30,12 @@ You need to add a manifest to your app with an extra activity to support Interst
 ```
 
 ## Example
-Right here we're creating a new ad using the Google Default app/add id's. As soon as the onAdLoaded event is fired you can show the ad using `ad.show();`
+
+Right here we're creating a new ad using the Google Default app/ad ID's. As soon as the `onAdLoaded` event is fired, you can show the ad using `ad.show();`
 Check the sample how it's implemented.
 
 ```javascript
-import { ADTYPES, AdView } from 'ti-admob';
+import { ADTYPES, AdView } from 'titanium-admob';
 
 const appAd = new AdView({
     adType: ADTYPES.AD_TYPE_INTERSTITIAL,
