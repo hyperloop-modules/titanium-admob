@@ -1,13 +1,15 @@
 '.container': {
-	backgroundColor: 'white'
+	backgroundColor: 'white',
+	layout: 'vertical'
 }
 
 'Label': {
 	color: '#000'
 }
 
-'#label': {
+'.label': {
 	font: {
 		fontSize: 12
-	}
+	},
+	top: '30dp'
 }

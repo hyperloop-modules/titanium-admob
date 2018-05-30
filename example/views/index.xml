@@ -1,5 +1,7 @@
 <Alloy>
 	<Window class="container" onOpen="handleOpen">
-		<Label id="label" onClick="doShowAd">Click to display Ad</Label>
+		<Label class="label" onClick="loadNpa">Click to load not personalized ad (npa)</Label>
+		<Label class="label" onClick="loadPa">Click to load personalized ad</Label>
+		<Label class="label" onClick="doShowAd">Click to display Ad</Label>
 	</Window>
 </Alloy>

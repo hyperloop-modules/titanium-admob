@@ -4,6 +4,8 @@ const MobileAds = require('com.google.android.gms.ads.MobileAds');
 const InterstitialAd = require('com.google.android.gms.ads.InterstitialAd');
 const AdRequest = require('com.google.android.gms.ads.AdRequest');
 const AdListener = require('com.google.android.gms.ads.AdListener');
+const Bundle = require('android.os.Bundle');
+const AdMobAdapter = require('com.google.ads.mediation.admob.AdMobAdapter');
 
 let hasInitApp = false;
 
@@ -40,14 +42,25 @@ class AdView {
       this.createInterstitialAdAndroid();
     }
 
-    if (this.adView !== null) {
+    /*if (this.adView !== null) {
       // first time, load already
       this.load();
-    }
+    }*/
   }
 
-  load() {
-    this.adView.loadAd(new AdRequest.Builder().build());
+  load(_extras) {
+    let request = new AdRequest.Builder().build();
+    if(_extras){
+      if(_extras.npa){
+        // https://developers.google.com/admob/android/eu-consent#forward_consent_to_the_google_mobile_ads_sdk
+  			let extras = new Bundle();
+  			extras.putString("npa", "1");
+  			request = new AdRequest.Builder()
+          .addNetworkExtrasBundle(AdMobAdapter.class, extras)
+          .build();
+  		}
+    }
+    this.adView.loadAd(request);
   }
 
   createInterstitialAdAndroid() {
